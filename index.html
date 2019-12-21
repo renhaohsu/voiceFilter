@@ -5,39 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>voice filter</title>
-  <style>html,body{ height: 100%}</style>
+  <style>
+    * { font-family: '微軟正黑體';}
+    html,body{ height: 100%;}
+    button{
+        position: relative;
+        margin-right: 0.5em;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    #start-stop{
+        position: relative;
+        margin-top: 1em;
+        padding: 5px 12px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    #start-stop::after{
+        position: absolute;
+        top: 100%;
+        left: -10%;
+        width: 200%;
+        opacity: 0;
+        transition: all ease 0.3s;
+        content: attr(data-tooltip);
+    }
+    #start-stop:hover::after{
+        opacity: 1;
+    }
+
+  </style>  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.84/Tone.js'></script>
 </head>  
 <body>
 
-<button id="start-stop">start</button>
+<button id="start-stop" data-tooltip="沒反應的話請再點一次">start</button>
 <button id="up">偏向女聲一些</button>
 <button id="down">偏向男聲一些</button>
 
+
 <script>
-  async function addToneJS_Script(){
+
+  document.body.addEventListener("click", function(){    
     console.log('因為chrome禁止了網頁本身在user有動作之前先建立聲音相關物件 只好先這樣  todo: 查一下建議的解決方式')
 
-    var ToneJS_Script = document.createElement( "script" );
-    ToneJS_Script.type = "text/javascript";
-    ToneJS_Script.src = "https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.84/Tone.js";
-    document.body.append(ToneJS_Script);
-  }
-
-  document.body.addEventListener("click", function(){
-    addToneJS_Script().then(()=>{
-      var myScript = document.createElement( "script" );
-      myScript.type = "text/javascript";
-      myScript.src = "./script.js";
-      document.body.append(myScript);    
-    });
+    var myScript = document.createElement( "script" );
+    myScript.type = "text/javascript";
+    myScript.src = "./script.js";
+    document.body.append(myScript);    
+    
   },{once:true})
 
 
 </script>
 
-<!-- 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.84/Tone.js'></script>
-  <script  src="./script.js"></script> -->
+
+  <!-- <script  src="./script.js"></script> -->
 
 </body>
 </html>
