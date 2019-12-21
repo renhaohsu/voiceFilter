@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  howardhsu</title>
+  <style>html,body{ height: 100%}</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<button id="start-stop">start</button>
+<button id="up">偏向女聲一些</button>
+<button id="down">偏向男聲一些</button>
+<!-- partial -->
+<script>
+  document.body.addEventListener("click", function(){
+//   console.log('initial')
+
+    var ToneJS_Script = document.createElement( "script" );
+    ToneJS_Script.type = "text/javascript";
+    ToneJS_Script.src = "https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.84/Tone.js";
+    document.body.append(ToneJS_Script);
+    
+    var myScript = document.createElement( "script" );
+    myScript.type = "text/javascript";
+    myScript.src = "./script.js";
+    document.body.append(myScript);
+    
+  },{once:true})
+
+
+</script>
+
+<!-- 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tone/14.4.84/Tone.js'></script>
+  <script  src="./script.js"></script> -->
+
+</body>
+</html>
