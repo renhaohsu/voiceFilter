@@ -23,7 +23,7 @@ var autoFilter = new Tone.AutoFilter({
 
 var motu = new Tone.UserMedia()
 document.body.addEventListener("click", function(){
-  console.log('initial')
+  console.log('initially 連接好toneJS的物件們')
   
   pitchShift.pitch += 6
   motu.connect(autoFilter);
