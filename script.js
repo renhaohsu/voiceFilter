@@ -9,7 +9,7 @@ var autoFilter = new Tone.AutoFilter({
   type : 'sine' ,
   depth : 1 ,
   baseFrequency : 0 ,
-  octaves : 2.6 
+  octaves : 2.6 ,
   filter : {
     type : 'highpass' ,
     rolloff : -12 ,
@@ -25,8 +25,7 @@ var motu = new Tone.UserMedia()
 document.body.addEventListener("click", function(){
   console.log('initially 連接好toneJS的物件們')
   
-  pitchShift.pitch += 0;
-  
+  pitchShift.pitch += 6
   motu.connect(autoFilter);
   autoFilter.connect(pitchShift);
   pitchShift.toMaster();
