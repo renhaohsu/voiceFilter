@@ -10,11 +10,11 @@ var autoFilter = new Tone.AutoFilter({
   depth : 1 ,
   baseFrequency : 0 ,
   octaves : 2.6 
-//  filter : {
-//    type : 'highpass' ,
-//    rolloff : -12 ,
-//    Q : 1
-//    }
+  filter : {
+    type : 'highpass' ,
+    rolloff : -12 ,
+    Q : 1
+    }
 })
 // var player = new Tone.Player("./myVoice.wav").connect(autoFilter)
 //play as soon as the buffer is loaded
