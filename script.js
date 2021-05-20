@@ -27,12 +27,12 @@ document.body.addEventListener("click", function(){
   
   motu.connect(autoFilter);
   autoFilter.connect(pitchShift);
-  pitchShift.toMaster();
+  pitchShift.toDestination();
 },{once:true})
 
 
 $startStopButton.onclick = () => {
-
+  Tone.start();
 
   if ($startStopButton.textContent === 'start') {
     $startStopButton.textContent = 'stop';
