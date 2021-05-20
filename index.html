@@ -7,12 +7,7 @@
   <title>voice filter</title>
   <style>
     * { font-family: '微軟正黑體';}
-    html,body{ height: 100%; background-color: rgb(0, 15, 49);}
-    section{
-      height: 50%;
-      /* background-color: cyan; */
-      align-items: center;
-    }
+    html,body{ max-height: 100%; background-color: rgb(0, 15, 49);}
     button{        
       font-weight: 346;
       color: rgb(253, 232, 137);
@@ -23,7 +18,7 @@
       box-shadow: 4px 1px 7px 1px rgba(217, 255, 0, 0.2);
       display: flex;
       padding: 5px 12px;
-      margin: 5em auto;
+      margin: 20vh auto;
       cursor: pointer;
     }
     button:hover {
@@ -53,11 +48,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js"></script>
 </head>  
 <body>
-<section>
   <button id="start-stop" data-tooltip="沒反應的話請再點一次">start</button>
   <button id="up">偏向女聲一些</button>
   <button id="down">偏向男聲一些</button>
-</section>
 
 <script>
 
