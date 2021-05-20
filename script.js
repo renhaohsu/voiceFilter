@@ -25,7 +25,6 @@ var motu = new Tone.UserMedia()
 document.body.addEventListener("click", function(){
   console.log('initially 連接好toneJS的物件們')
   
-  pitchShift.pitch += 6
   motu.connect(autoFilter);
   autoFilter.connect(pitchShift);
   pitchShift.toMaster();
